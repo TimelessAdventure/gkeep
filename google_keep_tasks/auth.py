@@ -67,7 +67,7 @@ class GoogleKeep(object):
                 auth_changed = True
                 username, password = self.get_credencials_assistant(username)
             try:
-                self.keep.login(username, password)
+                self.keep.authenticate(username, password)
             except LoginException:
                 choice = choices_prompt('Authentication failed, what do you want to do?', [
                     'Enter new credentials',
